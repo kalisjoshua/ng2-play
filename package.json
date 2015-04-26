@@ -29,6 +29,12 @@
   "dependencies": {
     "angular2": "2.0.0-alpha.20",
     "es6-module-loader": "0.16.5",
-    "systemjs": "0.16.7"
+    "systemjs": "0.16.7",
+    "whatwg-fetch": "^0.7.0"
+  },
+  "scripts": {
+    "publish": "git push origin `git subtree split --prefix dist`:gh-pages --force",
+    "prepublish": "gulp && git add -f dist/** && git commit -m \"gh-pages update\" dist",
+    "postpublish": "git reset --hard HEAD^"
   }
 }
