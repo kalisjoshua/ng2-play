@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<form *if="isOpen">
+  <input #newword>
+  <button (click)="addWord($event, newword)">Add</button>
+  <p *if="errors">{{errors}}</p>
+</form>
+
+<ol *if="words" reversed>
+  <li *for="#entry of words" title="Word for week starting {{entry.date}}">{{entry.word}}</li>
+</ol>
